@@ -1,0 +1,31 @@
+{
+  "name": "course_project_1",
+  "version": "1.0.0",
+  "description": "course project for studing",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TiredTorch/course_project_1.git"
+  },
+  "keywords": [
+    "course"
+  ],
+  "author": "Tr.Torch <vitochek337@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TiredTorch/course_project_1/issues"
+  },
+  "homepage": "https://github.com/TiredTorch/course_project_1#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.10",
+    "@babel/preset-env": "^7.16.10",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.7.0",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
