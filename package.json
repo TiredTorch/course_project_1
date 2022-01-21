@@ -4,7 +4,8 @@
   "description": "course project for studing",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
     "start": "node index.js"
   },
   "repository": {
@@ -25,7 +26,16 @@
     "@babel/preset-env": "^7.16.10",
     "babel-loader": "^8.2.3",
     "eslint": "^8.7.0",
+    "jest": "^27.4.7",
     "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "babel-jest": "^27.4.6",
+    "dotenv": "^14.2.0",
+    "nvm": "^0.0.4"
+  },
+  "jest": {
+    "verbose": true
   }
 }
