@@ -1,6 +1,10 @@
+import dotenv from 'dotenv'
+dotenv.config()
 
-//export const add = (a, b) => {return a + b}
+let a = 10
 
-//console.log(add(2, 2))
+export const add = (a, b) => {return a + b}
+
+console.log(add(2, 2))
 
 console.log(process.env.NEWCONST)
