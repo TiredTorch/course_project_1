@@ -1,5 +1,5 @@
 export const getOperands = (expresion) => {
-    let tempArray = expresion.split(" ")
+    const tempArray = expresion.split(" ")
 
     if(tempArray.length != 3) {
         return "Error: wrong input"

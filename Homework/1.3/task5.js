@@ -1,5 +1,5 @@
 export const getTime = (timeString) => {
-    let tempArray = timeString.split(" ")
+    const tempArray = timeString.split(" ")
 
     let tempArrayOfData = [];
 

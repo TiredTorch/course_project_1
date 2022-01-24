@@ -3,7 +3,6 @@ export const stringMerge = (firstWord, secondWord, breakpoint) => {
         return "Error: input value not a symbol"
     }
     if(!firstWord.includes(breakpoint) || !secondWord.includes(breakpoint)) {
-        //Nujno li delat exeption
         return `Error: some of strings doesnt contains ${breakpoint}`
     }
     let firstPartOfNewWord = firstWord.slice(0, firstWord.indexOf(breakpoint))
