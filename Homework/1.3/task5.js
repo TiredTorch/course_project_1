@@ -19,7 +19,7 @@ export const getTime = (timeString) => {
         if (parseInt(tempNumbersOfData[1]) < 0 || parseInt(tempNumbersOfData[1]) >= 60) {
             continue
         }
-        return `${tempNumbersOfData[0]}:${tempNumbersOfData[1]}`
+        return `${tempNumbersOfData[0].slice(0, 2)}:${tempNumbersOfData[1].slice(0, 2)}`
         
     }
     return "Error: no date in a string"
