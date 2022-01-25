@@ -1,7 +1,7 @@
 export const getOperands = (expresion) => {
     const tempArray = expresion.split(" ")
 
-    if(tempArray.length != 3) {
+    if(tempArray.length !== 3) {
         return "Error: wrong input"
     }
     if(['+', '-', '/', '*'].indexOf(tempArray[1]) === -1){

@@ -1,7 +1,7 @@
 export const getTime = (timeString) => {
     const tempArray = timeString.split(" ")
 
-    let tempArrayOfData = [];
+    const tempArrayOfData = [];
 
     tempArray.forEach(element => {
         if (element.indexOf(":") !== -1) {
@@ -22,6 +22,6 @@ export const getTime = (timeString) => {
         return `${tempNumbersOfData[0].slice(0, 2)}:${tempNumbersOfData[1].slice(0, 2)}`
         
     }
-    return "Error: no date in a string"
+    return " "
 
 }

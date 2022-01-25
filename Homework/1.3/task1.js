@@ -1,21 +1,21 @@
-export const basicOp = (operation, a, b) => {
-    if (isNaN(a) || isNaN(b)) {
+export const basicOp = (operation, firstElement, secondElement) => {
+    if (isNaN(firstElement) || isNaN(secondElement)) {
         return 0
     }
-    const intA = parseInt(a)
-    const intB = parseInt(b)
+    const intFirstElement = parseInt(firstElement)
+    const intSecondElement = parseInt(secondElement)
     switch (operation) {
         case "+":
-            return intA + intB
+            return intFirstElement + intSecondElement
     
         case "-":
-            return intA - intB
+            return intFirstElement - intSecondElement
     
         case "*":
-            return intA * intB
+            return intFirstElement * intSecondElement
     
         case "/":
-            return intA / intB
+            return intFirstElement / intSecondElement
     
         default:
             return 0

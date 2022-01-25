@@ -3,14 +3,13 @@ export const createPhoneNumber = (arrayOfNumbers) => {
         return "Error: wrong amount of numbers in array"
     }
 
-    let arrayOfTrulyNumber = arrayOfNumbers.map(element => parseInt(element))
+    const arrayOfTrulyNumber = arrayOfNumbers.map(element => parseInt(element))
 
     if (arrayOfTrulyNumber.includes(NaN)) {
         return "Error: wrong input (not int in array)"
     }
-    console.log(arrayOfTrulyNumber)
 
-    arrayOfTrulyNumber = arrayOfTrulyNumber.join('')
+    const joinedArrayOfTrulyNumber = arrayOfTrulyNumber.join('')
 
-    return `(${arrayOfTrulyNumber.slice(0, 3)}) ${arrayOfTrulyNumber.slice(3,6)}-${arrayOfTrulyNumber.slice(6, 10)}`
+    return `(${joinedArrayOfTrulyNumber.slice(0, 3)}) ${joinedArrayOfTrulyNumber.slice(3,6)}-${joinedArrayOfTrulyNumber.slice(6, 10)}`
 }
