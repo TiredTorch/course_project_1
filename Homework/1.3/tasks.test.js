@@ -1,8 +1,8 @@
-import {basicOp} from "./Homework/1.3/task1"
-import {stringMerge} from "./Homework/1.3/task2"
-import {createPhoneNumber} from "./Homework/1.3/task3"
-import {getOperands} from './Homework/1.3/task4'
-import {getTime} from './Homework/1.3/task5'
+import {basicOp} from "./task1"
+import {stringMerge} from "./task2"
+import {createPhoneNumber} from "./task3"
+import {getOperands} from './task4'
+import {getTime} from './task5'
 
 
 describe('Testing task1', () => {
@@ -18,7 +18,7 @@ describe('Testing task1', () => {
     test('Should return 11 when passed 4, 7 and "+"', () => {
         expect(basicOp("/", 49, 7)).toBe(7)
     });
-    test('Should return 11 when passed 4, 7 and "+"', () => {
+    test('Should return 0 when passed 45, 45 and "something else"', () => {
         expect(basicOp("something else", 45, 45)).toBe(0)
     });
 });
