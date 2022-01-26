@@ -25,6 +25,6 @@ export const getTime = (timeString) => {
         
   }
 
-  return ' ';
+  return '';
 
 };

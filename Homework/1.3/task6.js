@@ -1,13 +1,6 @@
-export const isPalidrome = (sentence) => {
-    const sentenceSymbols = [',', '?', '.', '!', ':', ' ']
+export const isPalindrome = (sentence) => {
 
-    let pureSentense = ''
+  const pureSentense = sentence.replace(/\W/gm, '').toLowerCase();
 
-    sentence.split('').forEach(element => {
-        if(sentenceSymbols.indexOf(element) === -1){
-            pureSentense += `${element}`
-        }
-    });
-
-    return pureSentense.toLowerCase() === pureSentense.toLowerCase().split('').reverse().join('');
-}
+  return pureSentense === pureSentense.split('').reverse().join('');
+};

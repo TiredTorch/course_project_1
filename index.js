@@ -1,9 +1,11 @@
-import dotenv from 'dotenv'
-dotenv.config()
+import dotenv from 'dotenv';
+dotenv.config();
 
 
-export const add = (a, b) => {return a + b}
+/* eslint-disable */
+console.log(
+    "Eva, can I see bees in a cave?".replace(/\W/gm, '')
+    );
 
-console.log(add(2, 2))
-
-console.log(process.env.NEWCONST)
+console.log(process.env.NEWCONST);
+/* eslint-enable */
