@@ -1,6 +1,7 @@
 /node_modules
 dzen.txt
 .env
+
 package-lock.json
 .eslintrc.json
 babel.config.json
