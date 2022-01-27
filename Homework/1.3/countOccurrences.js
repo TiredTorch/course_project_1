@@ -6,9 +6,10 @@ export const countOccurrences = (sentence, char) => {
   const splitedSentence = sentence.toLowerCase().split('');
   let countOfEnterance = 0;
 
+  const newChar = char.toLowerCase();
 
   splitedSentence.forEach(element => {
-    if(element === char.toLowerCase() ){
+    if(element === newChar ){
       countOfEnterance++;
     }
   });
