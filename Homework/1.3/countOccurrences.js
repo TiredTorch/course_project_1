@@ -1,5 +1,5 @@
 export const countOccurrences = (sentence, char) => {
-  if(char.length !== 1){
+  if(char.length !== 1 ){
     return 0;
   }
 
