@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 export const invertColor = (hex) => {
   if (hex.length !== 7 || hex[0] !== '#') {
-    return 'Error: input # with 6 digit hex color';
+    return 'Error: enter # with 6 digit hex color';
   }
 
   const symbols = '0123456789abcdef';

@@ -12,7 +12,7 @@ describe('Describe invertColor', () => {
       .toBe('#221155');
   });
 
-  test('Should return #ffffff when passed #012345', () => {
+  test('Should return #fedcba when passed #012345', () => {
     expect(invertColor('#012345'))
       .toBe('#fedcba');
   });
