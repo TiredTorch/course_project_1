@@ -36,6 +36,10 @@ describe('Describe createPrevArgSaver', () => {
   
 
     expect(result).toStrictEqual(expectedResult);
+
+    expect(operatedObject).toStrictEqual({
+      foo: 'bar', bar: 'foo',
+    });
   });
 
   test('Should return an array with all stages, that have been done to input object', () => {
@@ -70,6 +74,10 @@ describe('Describe createPrevArgSaver', () => {
   
 
     expect(result).toStrictEqual(expectedResult);
+
+    expect(operatedObject).toStrictEqual({
+      foo: 'bar', bar: 'foo',
+    });
   });
 
   test('Should return an array with all stages, that have been done to input object', () => {
@@ -85,6 +93,7 @@ describe('Describe createPrevArgSaver', () => {
     ];
 
     expect(result).toStrictEqual(expectedResult);
+    expect(operatedObject).toStrictEqual({});
   });
 
   
