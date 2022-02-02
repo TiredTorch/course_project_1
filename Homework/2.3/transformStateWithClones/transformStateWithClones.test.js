@@ -1,7 +1,7 @@
 import { transformStateWithClones } from './transformStateWithClones';
 
 
-describe('Describe createPrevArgSaver', () => {
+describe('Describe transformStateWithClones', () => {
 
   test('Should return an array with all stages, that have been done to input object', () => {
     const operatedObject = {
