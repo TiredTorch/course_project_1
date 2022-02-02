@@ -2,10 +2,10 @@ import { transformState } from './transformState';
 
 describe('Describe transformState', () => {
   test('Should work with a long list of operations', () => {
-    expect(transformState({
+    const operatedObject = {
       foo: 'bar', name: 'Jim', another: 'one',
-    },
-    [
+    };
+    const operations = [
       {
         operation: 'addProperties', properties: {yet: 'another property'},
       }, 
@@ -15,11 +15,13 @@ describe('Describe transformState', () => {
           foo: 'bar', name: 'Jim',
         },
       },
-    ],
-    ))
-      .toStrictEqual({
-        foo: 'bar', name: 'Jim',
-      });
+    ];
+    const result = transformState(operatedObject, operations);
+    const expectedResult =  {
+      foo: 'bar', name: 'Jim',
+    };
+
+    expect(result).toStrictEqual(expectedResult);
   });
 
   test('Should return {name: Jim} when adding corresponding property', () => {
@@ -46,10 +48,10 @@ describe('Describe transformState', () => {
   });
 
   test('Should work with a long list of operations', () => {
-    expect(transformState({
+    const operatedObject = {
       foo: 'bar', name: 'Jim', another: 'one',
-    },
-    [
+    };
+    const operations = [
       {
         operation: 'removeProperties', properties: ['another'],
       },
@@ -69,8 +71,10 @@ describe('Describe transformState', () => {
         operation: 'removeProperties', properties: ['name', 'hello'],
       },
 
-    ],
-    ))
-      .toStrictEqual({ foo: 'bar' });
+    ];
+    const result = transformState(operatedObject, operations);
+    const expectedResult =  { foo: 'bar' };
+
+    expect(result).toStrictEqual(expectedResult);
   });
 });

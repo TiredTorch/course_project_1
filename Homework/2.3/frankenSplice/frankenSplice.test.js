@@ -16,6 +16,7 @@ describe('Describe createPrevArgSaver', () => {
   });
 
   test('Should return one array, consists of first array inserted at second at position 2', () => {
+
     const result = frankenSplice(['claw', 'tentacle'], ['head', 'shoulders', 'knees', 'toes'], 2);
 
     expect(result).toStrictEqual( ['head', 'shoulders', 'claw', 'tentacle', 'knees', 'toes']);

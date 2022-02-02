@@ -37,24 +37,3 @@ export const transformStateWithClones = (state, transforms) => {
     
   return intervalForms;
 };
-
-// eslint-disable-next-line no-console
-console.log(transformStateWithClones(
-  {
-    foo: 'bar', bar: 'foo',
-  },
-  [
-    {
-      operation: 'addProperties', properties: {
-        name: 'Jim', hello: 'world',
-      },
-    }, 
-    {
-      operation: 'removeProperties', properties: ['bar', 'hello'],
-    },
-    {
-      operation: 'addProperties', properties: {another: 'one'},
-    },
-  ],
-    
-));
