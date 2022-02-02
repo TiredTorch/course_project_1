@@ -1,7 +1,9 @@
 export const moveZeros = (arrayOfData) => {
 
-  const arrayWithZeros = arrayOfData.filter(element => element !== 0);
-  const amountOfZeros = arrayOfData.length - arrayWithZeros.length;
+  const arrayWithoutZeros = arrayOfData.filter(element => element !== 0);
+  const amountOfZeros = arrayOfData.length - arrayWithoutZeros.length;
+
+  const arrayWithZeros = arrayWithoutZeros;
 
   for (let index = 0; index < amountOfZeros; index++) {
     

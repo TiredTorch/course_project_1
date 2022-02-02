@@ -22,7 +22,7 @@ describe('Describe transformState', () => {
       });
   });
 
-  test('Should work with a long list of operations', () => {
+  test('Should return {name: Jim} when adding corresponding property', () => {
     expect(transformState({},
       [
         {
@@ -34,7 +34,7 @@ describe('Describe transformState', () => {
       .toStrictEqual({name: 'Jim'});
   });
 
-  test('Should work with a long list of operations', () => {
+  test('Should clear the state', () => {
     expect(transformState({
       foo: 'bar', name: 'Jim', another: 'one',
     },
