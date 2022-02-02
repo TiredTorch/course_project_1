@@ -1,5 +1,5 @@
 export const fearNotLetter = (letterRange) => {
-  const arrayOfIndexesOfLetters = letterRange.split('').map(letter => letter.charCodeAt(0));
+  const arrayOfIndexesOfLetters = letterRange.split('').map(letter => letter.toLowerCase().charCodeAt(0));
 
   for (let index = 0; index < arrayOfIndexesOfLetters.length - 1; index++) {
     const element = arrayOfIndexesOfLetters[index];
