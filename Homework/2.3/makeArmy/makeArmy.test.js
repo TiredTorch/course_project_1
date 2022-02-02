@@ -1,7 +1,7 @@
 import { makeArmy } from './makeArmy';
 
 
-describe('Describe createPrevArgSaver', () => {
+describe('Describe makeArmy', () => {
 
   const shooters = makeArmy(10);
 

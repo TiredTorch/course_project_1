@@ -1,6 +1,6 @@
 import { createAdder } from './createAdder';
 
-describe('Describe createPrevArgSaver', () => {
+describe('Describe createAdder', () => {
   const adder1 = createAdder();
   const adder2 = createAdder(100);
 

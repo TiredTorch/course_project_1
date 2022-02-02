@@ -1,7 +1,7 @@
 import { squareList } from './squareList';
 
 
-describe('Describe createPrevArgSaver', () => {
+describe('Describe squareList', () => {
 
   test('Should return [16, 1764, 36] when [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2] is passed', () => {
     const result = squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2]);

@@ -1,6 +1,6 @@
 import { fearNotLetter } from './fearNotLetter';
 
-describe('Describe createPrevArgSaver', () => {
+describe('Describe fearNotLetter', () => {
 
   test('Should return d when passed abce', () => {
     const result = fearNotLetter('abce');

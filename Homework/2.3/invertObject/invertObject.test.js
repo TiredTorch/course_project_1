@@ -1,7 +1,7 @@
 import { invertObject } from './invertObject';
 
 
-describe('Describe createPrevArgSaver', () => {
+describe('Describe invertObject', () => {
 
   test('Should return empty object when empty object is passed', () => {
     const result = invertObject({});

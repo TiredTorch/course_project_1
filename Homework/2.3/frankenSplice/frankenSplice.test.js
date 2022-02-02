@@ -1,7 +1,7 @@
 import { frankenSplice } from './frankenSplice';
 
 
-describe('Describe createPrevArgSaver', () => {
+describe('Describe frankenSplice', () => {
 
   test('Should return [4, 1, 2, 3, 5] when [1, 2, 3], [4, 5], 1 is passed', () => {
     const result = frankenSplice([1, 2, 3], [4, 5], 1);
