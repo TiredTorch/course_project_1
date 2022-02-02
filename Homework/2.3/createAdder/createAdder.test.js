@@ -1,7 +1,7 @@
 import { createAdder } from './createAdder';
 
 describe('Describe createAdder', () => {
-  const adder1 = createAdder();
+  const adder1 = createAdder('f');
   const adder2 = createAdder(100);
 
   test('Should return 0 (sum of previous value) when nothing is passed', () => {

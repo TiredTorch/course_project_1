@@ -1,12 +1,8 @@
 export const createAdder = (startValue) => {
   
-  try {
-    if (typeof startValue !== 'number' 
+  if (typeof startValue !== 'number' 
     && typeof startValue !== 'undefined') {
-      throw new TypeError;
-    }
-  } catch (e) {
-    return e.name;
+    throw new TypeError('You cannot make a start with letter');
   }
 
   let sum = startValue ?? 0;

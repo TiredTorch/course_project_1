@@ -1,11 +1,7 @@
 export const invertObject = (userObject) => {
 
-  try {
-    if (typeof userObject !== 'object') {
-      throw new TypeError('You should enter object');
-    }
-  } catch (e) {
-    return e.message;
+  if (typeof userObject !== 'object') {
+    throw new TypeError('You should enter object');
   }
 
   const swappedObject = {};

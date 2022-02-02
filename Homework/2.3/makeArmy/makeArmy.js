@@ -1,11 +1,7 @@
 export const makeArmy = (amountOfSoliders) => {
 
-  try {
-    if (!Number.isInteger(amountOfSoliders)) {
-      throw new TypeError('Wrong input: number have to be an integer');
-    }
-  } catch (e) {
-    return e.name;
+  if (!Number.isInteger(amountOfSoliders)) {
+    throw new TypeError('Wrong input: number have to be an integer');
   }
 
   const armyArray = [];
