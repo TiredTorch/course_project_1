@@ -1,5 +1,7 @@
 export const transformStateWithClones = (state, transforms) => {
 
+  const cloneOfState = {...state};
+
   const intervalForms = [];
 
   transforms.forEach(element => {
@@ -8,26 +10,26 @@ export const transformStateWithClones = (state, transforms) => {
       case 'addProperties':
     
         for (const key in element.properties) {
-          state[key] = element.properties[key];
+          cloneOfState[key] = element.properties[key];
         }
 
-        intervalForms.push({...state});
+        intervalForms.push({...cloneOfState});
         break;
     
       case 'clear':
-        for (const key in state) {
-          delete state[key];
+        for (const key in cloneOfState) {
+          delete cloneOfState[key];
         }
 
-        intervalForms.push({...state});
+        intervalForms.push({...cloneOfState});
         break;
     
       case 'removeProperties':
         element.properties.forEach(prop => {
-          delete state[prop];
+          delete cloneOfState[prop];
         });
     
-        intervalForms.push({...state});
+        intervalForms.push({...cloneOfState});
         break;
         
       default:
