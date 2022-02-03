@@ -7,12 +7,7 @@ export const createAdder = (startValue) => {
 
   let sum = startValue ?? 0;
 
-  return (...args) => {
-    for (const arg of args) {
-      sum += arg;
-    }
+  return (...args) => sum += args.reduce((acc, value) => acc + value, 0);
 
-    return sum;
-  };
 };
           

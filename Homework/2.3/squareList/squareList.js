@@ -1,7 +1,11 @@
 export const squareList = (listOfNumber) =>
-  listOfNumber
-    .filter(
-      arg =>  arg >= 0 
-      && arg % 1 === 0
-      && typeof arg === 'number')
-    .map( (num) => num * num);
+  listOfNumber.reduce((acc, value) => {
+    if (value >= 0 
+      && value % 1 === 0
+      && typeof value === 'number') {
+      return [...acc, Math.pow(value, 2)];
+    }
+    
+    return [... acc];
+
+  }, []);
