@@ -23,4 +23,10 @@ describe('Describe makeArmy', () => {
     expect(result).toStrictEqual(9);
   });
 
+  test('Should throw an error', () => {
+    const result = () => makeArmy('f');
+
+    expect(result).toThrow('Wrong input: number have to be an integer');
+  });
+
 });

@@ -22,5 +22,15 @@ describe('Describe frankenSplice', () => {
     expect(result).toStrictEqual( ['head', 'shoulders', 'claw', 'tentacle', 'knees', 'toes']);
   });
   
+  test('Should throw an error', () => {
+    const result = () => frankenSplice([1, 2, 3], [4, 5], 3);
 
+    expect(result).toThrow('Index of insertion more then second array length');
+  });
+
+  test('Should throw an error', () => {
+    const result = () => frankenSplice([1, 2, 3], [4, 5], 'f');
+
+    expect(result).toThrow('Position of insertion have to be a number');
+  });
 });

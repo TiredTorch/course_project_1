@@ -1,7 +1,7 @@
 import { createAdder } from './createAdder';
 
 describe('Describe createAdder', () => {
-  const adder1 = createAdder('f');
+  const adder1 = createAdder(0);
   const adder2 = createAdder(100);
 
   test('Should return 0 (sum of previous value) when nothing is passed', () => {
@@ -40,4 +40,12 @@ describe('Describe createAdder', () => {
 
     expect(result).toBe(200);
   });
+
+  test('Should throw an error', () => {
+    const result = () => createAdder('f');
+
+    expect(result).toThrow('You cannot make a start with letter');
+  });
+
+  
 });

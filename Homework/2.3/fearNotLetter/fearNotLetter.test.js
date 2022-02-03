@@ -25,5 +25,23 @@ describe('Describe fearNotLetter', () => {
 
     expect(result).toBe(undefined);
   });
+
+  test('Should throw an error', () => {
+    const result = () => fearNotLetter('sltvwx');
+
+    expect(result).toThrow('Input does not preserve alphabetical order');
+  });
+
+  test('Should throw an error', () => {
+    const result = () => fearNotLetter('lwx');
+
+    expect(result).toThrow('Skipped more then one letter in order');
+  });
+
+  test('Should throw an error', () => {
+    const result = () => fearNotLetter('lvx');
+
+    expect(result).toThrow('Skipped more then one letter in order');
+  });
 });
 
