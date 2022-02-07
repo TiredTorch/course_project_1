@@ -44,7 +44,7 @@ describe('Describe createAdder', () => {
   test('Should throw an error', () => {
     const result = () => createAdder('f');
 
-    expect(result).toThrow('You cannot make a start with letter');
+    expect(result).toThrow(new TypeError('You cannot make a start with letter'));
   });
 
   

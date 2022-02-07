@@ -26,7 +26,7 @@ describe('Describe makeArmy', () => {
   test('Should throw an error', () => {
     const result = () => makeArmy('f');
 
-    expect(result).toThrow('Wrong input: number have to be an integer');
+    expect(result).toThrow(new TypeError('Wrong input: number have to be an integer'));
   });
 
 });

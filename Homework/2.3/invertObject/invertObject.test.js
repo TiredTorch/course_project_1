@@ -37,6 +37,6 @@ describe('Describe invertObject', () => {
   test('Should throw an error', () => {
     const result = () => invertObject('f');
 
-    expect(result).toThrow('You should enter object');
+    expect(result).toThrow(new TypeError('You should enter object'));
   });
 });
