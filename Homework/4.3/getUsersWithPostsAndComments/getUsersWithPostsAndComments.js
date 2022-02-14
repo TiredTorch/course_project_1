@@ -51,4 +51,4 @@ export const getUsersWithPostsAndComments = async() => {
   }
 };
 
-getUsersWithPostsAndComments();
+getUsersWithPostsAndComments().then(console.log);

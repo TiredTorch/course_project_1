@@ -1,17 +1,14 @@
 /* eslint-disable no-console */
 import { getProductList } from './getProductList';
-import mockAxios from 'axios';
-
-jest.mock('axios');
-mockAxios.get.mockImplementation(() => Promise.resolve({ data: {}}));
+import 'regenerator-runtime';
 
 describe('Describe getProductList', () => {
-  test('Should return list of products', async() => {
+  it('gpl', async() => {
     const result = await getProductList();
 
-    console.log(result);
-    expect(result).toStrictEqual([]);
+    expect(result).toBe(10);
   });
+  
   
 });
 

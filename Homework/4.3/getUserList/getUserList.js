@@ -16,13 +16,18 @@ export const getUserList = async() => {
     }
 
     for (const iterator of todosAPI) {
-      
+      const currentUser = usersWithTasks.find(element => element.id === iterator.userId);
+
       if (iterator.completed === false) {
         continue;
       }
 
+      if (currentUser === undefined) {
+        continue;
+      }
+
       delete iterator.completed;
-      usersWithTasks.find(element => element.id === iterator.userId)['todos'].push(iterator);
+      currentUser['todos'].push(iterator);
     }
 
     return usersWithTasks;
