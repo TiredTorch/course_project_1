@@ -1,7 +1,7 @@
 /node_modules
 dzen.txt
 .env
-
+.vscode
 package-lock.json
 .eslintrc.json
 babel.config.json
