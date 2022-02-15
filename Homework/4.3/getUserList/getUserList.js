@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import axios from 'axios';
+import 'regenerator-runtime';
 
 export const getUserList = async() => {
   try {
@@ -12,10 +13,13 @@ export const getUserList = async() => {
     const usersWithTasks = usersAPI;
 
     for (const iterator of usersWithTasks) {
-      iterator.todos = [];
+      iterator.todo = [];
     }
 
+
+
     for (const iterator of todosAPI) {
+
       const currentUser = usersWithTasks.find(element => element.id === iterator.userId);
 
       if (iterator.completed === false) {
@@ -26,15 +30,21 @@ export const getUserList = async() => {
         continue;
       }
 
-      delete iterator.completed;
-      currentUser['todos'].push(iterator);
+      currentUser['todo'].push(iterator);
     }
 
-    return usersWithTasks;
+
+
+    return usersWithTasks[0];
 
   } catch (error) {
     return null;
   }
 };
 
-getUserList().then(console.log);
+
+(async() => {
+  const a = await getUserList();
+
+  console.log(JSON.stringify(a, null, 2));
+})();

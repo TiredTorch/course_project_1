@@ -1,6 +1,7 @@
-/* eslint-disable no-console */
 import axios from 'axios';
 import 'regenerator-runtime';
+
+/* eslint-disable no-console */
 
 export const getProductList = async() => {
 
@@ -11,15 +12,13 @@ export const getProductList = async() => {
 
     for (let i = 0; i < storeAPI.length; i++) {
 
-
-      for (let j = 0; j < storeAPI.length - i - 1; j++) {
-        if (storeAPI[j].category > storeAPI[j + 1].category) {
+      for (let j = 0; j < (storeAPI.length - i - 1); j++) {
+        if (storeAPI[j].price < storeAPI[j + 1].price) {
           const tempBubble = storeAPI[j];
 
           storeAPI[j] = storeAPI[j + 1];
           storeAPI[j + 1] = tempBubble;
         }
-        
       }
       
     }
@@ -28,7 +27,7 @@ export const getProductList = async() => {
 
 
       for (let j = 0; j < storeAPI.length - i - 1; j++) {
-        if (storeAPI[j] > storeAPI[j + 1]) {
+        if (storeAPI[j].category > storeAPI[j + 1].category) {
           const tempBubble = storeAPI[j];
 
           storeAPI[j] = storeAPI[j + 1];
@@ -48,8 +47,11 @@ export const getProductList = async() => {
 
 };
 
+
 (async() => {
-  console.log(await getProductList());
+  const a = await getProductList();
+
+  console.log(JSON.stringify(a, null, 2));
 })();
 
 

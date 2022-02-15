@@ -1,23 +1,23 @@
 /* eslint-disable no-console */
-import { getProductList } from './getProductList';
+import { getUsersWithPostsAndComments } from './getUsersWithPostsAndComments';
 import mockAxios from 'axios';
 
 jest.mock('axios', () => ({
   __esModule: true,
   default: {
-    get: jest.fn().mockResolvedValue({ data: 'aaa' }),
+    get: jest.fn().mockResolvedValue({ data: 'kkk' }),
   },
 }));
 
-describe('Describe getProductList', () => {
+describe('Describe getUsersWithPostsAndComments', () => {
 
   afterEach(jest.clearAllMocks);
 
-  it('gpl1', async() => {
+  it('gpl3', async() => {
     
-    const result = await getProductList();
+    const result = await getUsersWithPostsAndComments();
 
-    expect(result).toBe('aaa');
+    expect(result).toBe('kkk');
     expect(mockAxios.get).toHaveBeenCalledTimes(1);
     expect(mockAxios.get).toHaveBeenCalledWith('https://fakestoreapi.com/products');
   });

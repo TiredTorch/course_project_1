@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import axios from 'axios';
+import 'regenerator-runtime';
 
 export const getUsersWithPostsAndComments = async() => {
   try {
@@ -29,7 +30,6 @@ export const getUsersWithPostsAndComments = async() => {
         continue;
       }
 
-      delete iterator.postId;
       currentPost['comments'].push(iterator);
     }
 
@@ -40,7 +40,6 @@ export const getUsersWithPostsAndComments = async() => {
         continue;
       }
 
-      delete iterator.userId;
       currentUser['posts'].push(iterator);
     }
 
@@ -51,4 +50,8 @@ export const getUsersWithPostsAndComments = async() => {
   }
 };
 
-getUsersWithPostsAndComments().then(console.log);
+(async() => {
+  const a = await getUsersWithPostsAndComments();
+
+  console.log(JSON.stringify(a, null, 2));
+})();
