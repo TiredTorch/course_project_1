@@ -1,57 +1,36 @@
-/* eslint-disable no-console */
 import axios from 'axios';
 import 'regenerator-runtime';
+import {} from 'dotenv/config'; 
 
 export const getUsersWithPostsAndComments = async() => {
   try {
-    const users = await axios.get('https://jsonplaceholder.typicode.com/users');
-    const posts = await axios.get('https://jsonplaceholder.typicode.com/posts');
-    const comments = await axios.get('https://jsonplaceholder.typicode.com/comments');
+    const users = await axios.get(process.env.USERS_URL);
+    const posts = await axios.get(process.env.POSTS_URL);
+    const comments = await axios.get(process.env.COMMENTS_URL);
 
     const usersAPI = users.data;
     const postsAPI = posts.data;
     const commentsAPI = comments.data;
 
-    const usersWithPosts = usersAPI;
-    const postsWithComments = postsAPI;
+    const postsWithComments = postsAPI.map(
+      post => ({
+        ...post, comments: (
+          commentsAPI.filter(comment => post.id === comment.postId)
+        ),
+      }),
+    );
 
-    for (const iterator of postsWithComments) {
-      iterator.comments = [];
-    }
-
-    for (const iterator of usersWithPosts) {
-      iterator.posts = [];
-    }
-
-    for (const iterator of commentsAPI) {
-      const currentPost = postsWithComments.find(element => element.id === iterator.postId);
-
-      if (currentPost === undefined) {
-        continue;
-      }
-
-      currentPost['comments'].push(iterator);
-    }
-
-    for (const iterator of postsAPI) {
-      const currentUser = usersWithPosts.find(element => element.id === iterator.userId);
-
-      if (currentUser === undefined) {
-        continue;
-      }
-
-      currentUser['posts'].push(iterator);
-    }
+    const usersWithPosts = usersAPI.map(
+      user => ({
+        ...user, posts: (
+          postsWithComments.filter(post => user.id === post.userId)
+        ),
+      }),
+    );
 
     return usersWithPosts;
 
   } catch (error) {
-    return null;
+    return new Error;
   }
 };
-
-(async() => {
-  const a = await getUsersWithPostsAndComments();
-
-  console.log(JSON.stringify(a, null, 2));
-})();

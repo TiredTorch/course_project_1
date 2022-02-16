@@ -1,57 +1,24 @@
 import axios from 'axios';
 import 'regenerator-runtime';
-
-/* eslint-disable no-console */
+import {} from 'dotenv/config';
 
 export const getProductList = async() => {
 
   try {
-    const result = await axios.get('https://fakestoreapi.com/products');
-
+    const result = await axios.get(process.env.STORE_URL);
     const storeAPI = result.data;
-
-    for (let i = 0; i < storeAPI.length; i++) {
-
-      for (let j = 0; j < (storeAPI.length - i - 1); j++) {
-        if (storeAPI[j].price < storeAPI[j + 1].price) {
-          const tempBubble = storeAPI[j];
-
-          storeAPI[j] = storeAPI[j + 1];
-          storeAPI[j + 1] = tempBubble;
-        }
-      }
-      
-    }
-
-    for (let i = 0; i < storeAPI.length; i++) {
-
-
-      for (let j = 0; j < storeAPI.length - i - 1; j++) {
-        if (storeAPI[j].category > storeAPI[j + 1].category) {
-          const tempBubble = storeAPI[j];
-
-          storeAPI[j] = storeAPI[j + 1];
-          storeAPI[j + 1] = tempBubble;
-        }
-        
-      }
-      
-    }
+    
+    storeAPI
+      .sort((a, b) => a.price > b.price ? 1 : -1)
+      .sort((a, b) => a.category > b.category ? 1 : -1);
 
     return storeAPI;
 
   } catch (error) {
 
-    return null;
+    return new Error;
   }
 
 };
-
-
-(async() => {
-  const a = await getProductList();
-
-  console.log(JSON.stringify(a, null, 2));
-})();
 
 
