@@ -1,25 +1,72 @@
-/* eslint-disable no-console */
 import { getUserList } from './getUserList';
+import axios from 'axios';
 import mockAxios from 'axios';
 
-jest.mock('axios', () => ({
-  __esModule: true,
-  default: {
-    get: jest.fn().mockResolvedValue({ data: 'fff' }),
-  },
-}));
+jest.mock('axios');
+afterEach(jest.clearAllMocks);
 
 describe('Describe getUserList', () => {
 
-  afterEach(jest.clearAllMocks);
+  it('Should reject getUserList', async() => {
+    axios.get.mockImplementationOnce(() => Promise.reject(null));
 
-  it('gpl2', async() => {
+    const result = await getUserList();
     
+    expect(result).toStrictEqual(new Error);
+  });
+
+  it('Should resolve getUserList', async() => {
+    
+    axios.get
+      .mockImplementationOnce(() => 
+        Promise.resolve(
+          { data: [
+            {
+              id: 1, email: 'kolya@gmail.com',
+            },
+          ] },
+        ))
+      .mockImplementationOnce(() => 
+        Promise.resolve(
+          { data: [
+            {
+              userId: 1, completed: true,
+            },
+            {
+              userId: 1, completed: false,
+            },
+          ] },
+        ));
+
     const result = await getUserList();
 
-    expect(result).toBe('fff');
-    expect(mockAxios.get).toHaveBeenCalledTimes(1);
-    expect(mockAxios.get).toHaveBeenCalledWith('https://jsonplaceholder.typicode.com/users');
+    expect(result).toStrictEqual([
+      {
+        id: 1,
+        email: 'kolya@gmail.com',
+        todo: [
+          {
+            userId: 1, completed: true,
+          },
+        ],
+      },
+    ]);
+
+  });
+
+  it('Should be called with proper url', async() => {
+    
+    axios.get.mockImplementationOnce(() => Promise.resolve({data: {}}));
+
+    await getUserList();
+
+    expect(mockAxios.get).toHaveBeenCalledWith(
+      'https://jsonplaceholder.typicode.com/users',
+    );
+
+    expect(mockAxios.get).toHaveBeenCalledWith(
+      'https://jsonplaceholder.typicode.com/todos',
+    );
   });
   
   
