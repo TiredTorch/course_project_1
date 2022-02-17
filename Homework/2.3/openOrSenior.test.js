@@ -1,6 +1,6 @@
 import { openOrSenior } from './openOrSenior';
 
-describe('Describe openOrSenior', () => {
+describe.skip('Describe openOrSenior', () => {
   test('Should return "[Open, Senior, Open, Senior]" when passed "[[31, 10],[55,23],[20, 0],[41, 16]]"', () => {
     expect(openOrSenior([[31, 10],[55,23],[20, 0],[41, 16]]))
       .toStrictEqual(['Open', 'Senior', 'Open', 'Senior']);

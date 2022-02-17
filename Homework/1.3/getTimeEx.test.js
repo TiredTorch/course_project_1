@@ -1,6 +1,6 @@
 import {getTimeEx} from './getTimeEx';
 
-describe('Describe getTimeEx', () => {
+describe.skip('Describe getTimeEx', () => {
   test('Should return "09:00" when passed "Breakfast at 09:00"', () => {
     expect(getTimeEx('Breakfast at 09:00')).toBe('09:00');
   });

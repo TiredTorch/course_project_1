@@ -1,7 +1,7 @@
 import { makeArmy } from './makeArmy';
 
 
-describe('Describe makeArmy', () => {
+describe.skip('Describe makeArmy', () => {
 
   const shooters = makeArmy(10);
 

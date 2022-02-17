@@ -1,6 +1,6 @@
 import { createAdder } from './createAdder';
 
-describe('Describe createAdder', () => {
+describe.skip('Describe createAdder', () => {
   const adder1 = createAdder(0);
   const adder2 = createAdder(100);
 

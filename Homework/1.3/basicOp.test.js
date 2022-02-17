@@ -1,7 +1,7 @@
 import {basicOp} from './basicOp';
 
 
-describe('Describe basicOp', () => {
+describe.skip('Describe basicOp', () => {
   test('Should return 11 when passed 4, 7 and "+"', () => {
     expect(basicOp('+', 4, 7)).toBe(11);
   });

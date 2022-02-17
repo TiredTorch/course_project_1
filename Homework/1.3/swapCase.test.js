@@ -1,6 +1,6 @@
 import {swapCase} from './swapCase';
 
-describe('Describe swapCase', () => {
+describe.skip('Describe swapCase', () => {
   test('Should return "AbC" when passed "aBc"', () => {
     expect(swapCase('aBc')).toBe('AbC');
   });

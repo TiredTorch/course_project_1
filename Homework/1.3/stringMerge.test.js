@@ -1,6 +1,6 @@
 import {stringMerge} from './stringMerge';
 
-describe('Describe stringMerge', () => {
+describe.skip('Describe stringMerge', () => {
   test('Should return held when passed "hello", "world" and "l"', () => {
     expect(stringMerge('hello', 'world', 'l')).toBe('held');
   });

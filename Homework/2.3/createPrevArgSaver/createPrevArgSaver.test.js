@@ -1,6 +1,6 @@
 import { createPrevArgSaver } from './createPrevArgSaver';
 
-describe('Describe createPrevArgSaver', () => {
+describe.skip('Describe createPrevArgSaver', () => {
   const argSaver = createPrevArgSaver();
 
   test('Should return undefined (origin value) when passed 123', () => {

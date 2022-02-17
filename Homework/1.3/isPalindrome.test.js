@@ -1,6 +1,6 @@
 import {isPalindrome} from './isPalindrome';
 
-describe('Describe isPalindrome', () => {
+describe.skip('Describe isPalindrome', () => {
   test('Should return "true" when passed "Eva, can I see bees in a cave?"', () => {
     expect(isPalindrome('Eva, can I see bees in a cave?')).toBe(true);
   });

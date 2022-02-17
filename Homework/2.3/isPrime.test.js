@@ -1,7 +1,7 @@
 import { isPrime } from './isPrime';
 
 
-describe('Describe isPrime', () => {
+describe.skip('Describe isPrime', () => {
   test('Should return "true" when passed "2"', () => {
     expect(isPrime(2)).toBe(true);
   });
