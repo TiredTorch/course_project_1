@@ -1,12 +1,10 @@
-import axios from 'axios';
-import 'regenerator-runtime';
+import { getDataFromServer } from '~/utils/helper';
 import {} from 'dotenv/config';
 
 export const getProductList = async() => {
 
   try {
-    const result = await axios.get(process.env.STORE_URL);
-    const storeAPI = result.data;
+    const storeAPI = await getDataFromServer(process.env.STORE_URL);
     
     storeAPI
       .sort((a, b) => a.price > b.price ? 1 : -1)

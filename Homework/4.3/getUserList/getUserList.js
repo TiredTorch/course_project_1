@@ -1,5 +1,4 @@
-import axios from 'axios';
-import 'regenerator-runtime';
+import { getDataFromServer } from '~/utils/helper';
 import {} from 'dotenv/config';
 
 export const getUserList = async() => {
@@ -23,16 +22,6 @@ export const getUserList = async() => {
 
   } catch (error) {
     
-    return new Error;
-  }
-};
-
-const getDataFromServer = async(url) => {
-  try {
-
-    return await (await axios.get(url)).data;
-  } catch (error) {
-
     return new Error;
   }
 };

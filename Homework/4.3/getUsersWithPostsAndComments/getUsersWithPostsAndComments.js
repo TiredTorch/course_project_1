@@ -1,5 +1,4 @@
-import axios from 'axios';
-import 'regenerator-runtime';
+import { getDataFromServer } from '~/utils/helper';
 import {} from 'dotenv/config'; 
 
 export const getUsersWithPostsAndComments = async() => {
@@ -37,12 +36,3 @@ export const getUsersWithPostsAndComments = async() => {
   }
 };
 
-const getDataFromServer = async(url) => {
-  try {
-
-    return await (await axios.get(url)).data;
-  } catch (error) {
-
-    return new Error;
-  }
-};
