@@ -23,7 +23,7 @@ describe('Describe getProductList', () => {
           {
             price: 10, category: 'w', 
           }, {
-            price: 20, category: 'a', 
+            price: 20, category: 'f', 
           }, {
             price: 5, category: 'a', 
           },
@@ -34,9 +34,10 @@ describe('Describe getProductList', () => {
 
     expect(result).toStrictEqual([
       {
-        price: 20, category: 'a',
-      }, {
         price: 5, category: 'a',
+      }, 
+      {
+        price: 20, category: 'f',
       }, {
         price: 10, category: 'w',
       },

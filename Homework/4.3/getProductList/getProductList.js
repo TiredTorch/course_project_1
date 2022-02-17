@@ -10,7 +10,7 @@ export const getProductList = async() => {
     
     storeAPI
       .sort((a, b) => a.price > b.price ? 1 : -1)
-      .sort((a, b) => a.category > b.category ? 1 : -1);
+      .sort((a, b) => a.category.localeCompare(b.category));
 
     return storeAPI;
 
