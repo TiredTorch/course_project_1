@@ -4,11 +4,13 @@ import {} from 'dotenv/config';
 
 export const getUserList = async() => {
   try {
-    const users = await axios.get(process.env.USERS_URL);
-    const todos = await axios.get(process.env.TODOS_URL);
+    const users = getDataFromServer(process.env.USERS_URL);
+    const todos = getDataFromServer(process.env.TODOS_URL);
 
-    const usersAPI = users.data;
-    const todosAPI = todos.data;
+    const responseFromServer = await Promise.all([users, todos]);
+
+    const usersAPI = responseFromServer[0];
+    const todosAPI = responseFromServer[1];
 
     const usersWithTasks = usersAPI
       .map(user => ( {
@@ -21,6 +23,16 @@ export const getUserList = async() => {
 
   } catch (error) {
     
+    return new Error;
+  }
+};
+
+const getDataFromServer = async(url) => {
+  try {
+
+    return await (await axios.get(url)).data;
+  } catch (error) {
+
     return new Error;
   }
 };

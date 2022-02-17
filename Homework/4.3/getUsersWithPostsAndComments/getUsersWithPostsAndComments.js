@@ -4,13 +4,15 @@ import {} from 'dotenv/config';
 
 export const getUsersWithPostsAndComments = async() => {
   try {
-    const users = await axios.get(process.env.USERS_URL);
-    const posts = await axios.get(process.env.POSTS_URL);
-    const comments = await axios.get(process.env.COMMENTS_URL);
+    const users = getDataFromServer(process.env.USERS_URL);
+    const posts = getDataFromServer(process.env.POSTS_URL);
+    const comments = getDataFromServer(process.env.COMMENTS_URL);
 
-    const usersAPI = users.data;
-    const postsAPI = posts.data;
-    const commentsAPI = comments.data;
+    const responseFromServer = await Promise.all([users, posts, comments]);
+
+    const usersAPI = responseFromServer[0];
+    const postsAPI = responseFromServer[1];
+    const commentsAPI = responseFromServer[2];
 
     const postsWithComments = postsAPI.map(
       post => ({
@@ -31,6 +33,16 @@ export const getUsersWithPostsAndComments = async() => {
     return usersWithPosts;
 
   } catch (error) {
+    return new Error;
+  }
+};
+
+const getDataFromServer = async(url) => {
+  try {
+
+    return await (await axios.get(url)).data;
+  } catch (error) {
+
     return new Error;
   }
 };
